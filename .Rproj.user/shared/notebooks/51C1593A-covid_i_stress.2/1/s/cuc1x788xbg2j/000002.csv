@@ -1,0 +1,26 @@
+"0","```r
+
+```"
+"1","Warning messages:
+1: In readChar(file, size, TRUE) : truncating string with embedded nuls
+2: In readChar(file, size, TRUE) : truncating string with embedded nuls
+3: In readChar(file, size, TRUE) : truncating string with embedded nuls
+4: In readChar(file, size, TRUE) : truncating string with embedded nuls
+"
+"0","```r
+m15plot <- plot_model(m15, type = \"pred\", terms = c(\"socpolicy\", \"intervention [10,-30]\")) 
+
+m15plot + labs(title = \"\", x = \"Welfare State Strength\", y = \"Coronavirus Concerns, Societal\") +
+  scale_color_manual(name=\"Government\nIntervention\",
+                       labels=c(\"WEAK \n30-days late\",\"STRONG \n5-days advance\"),
+                       values=c(\"red\",\"blue\")) +
+    theme(panel.background = element_blank(),
+          axis.line = element_line(color = \"black\"),
+          legend.spacing.x = unit(0.5, 'cm'),
+          legend.text = element_text(margin = margin(t = 5), size = 12),
+          legend.title = element_text(size = 14),
+          axis.title = element_text(size = 14))
+```"
+"1","Scale for 'colour' is already present. Adding another scale for 'colour', which
+will replace the existing scale.
+"

@@ -1,0 +1,16 @@
+"0","```r
+
+# m1x <- lm(concern_self ~ days_since_peak + conf_delta + gov_resp*intervention, data = df)
+
+m2 <- lm(concern_self ~ days_since_peak + conf_delta + gov_resp + gini_disp, data = df)
+
+m3 <- lm(concern_self ~ days_since_peak + conf_delta + gov_resp + socpolicy, data = df)
+
+m4 <- lm(concern_self ~ days_since_peak + conf_delta + gov_resp + gdp, data = df)
+
+m5 <- lm(concern_self ~ days_since_peak + conf_delta + gov_resp + gini_disp + socpolicy + gdp, data = df)
+
+m6 <- lm(concern_self ~ gov_resp*conf_delta)
+```"
+"1","Error in eval(predvars, data, env) : object 'concern_self' not found
+"

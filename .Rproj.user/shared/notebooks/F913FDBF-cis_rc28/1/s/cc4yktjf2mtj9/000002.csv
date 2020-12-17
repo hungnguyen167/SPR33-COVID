@@ -1,0 +1,6 @@
+"0","```r
+tab_model(m1, m2, m3, m4, m5, p.style = \"stars\", p.threshold = c(0.10, 0.05, 0.01), show.ci = F, rm.terms = c(\"(Intercept)\"), show.std = T, dv.labels = c(\"M3\"), pred.labels = c(\"Days Since Curve Inflection\", \"New Case Rate\", \"Intervention Severity\", \"Disposable Income Inequality\", \"Welfare State Strength\", \"GDP Per Capita\"))
+
+```"
+"1","There were 35 warnings (use warnings() to see them)
+"

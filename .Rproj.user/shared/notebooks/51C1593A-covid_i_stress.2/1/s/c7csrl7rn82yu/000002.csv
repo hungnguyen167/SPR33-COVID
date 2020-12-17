@@ -1,0 +1,13 @@
+"0","```r
+
+m1a <- lm(concern_self ~ days_since_peak + conf_delta, data = finaldf_Ca)
+m2a <- lm(concern_self ~ days_since_peak + conf_delta + log(gdp), data = finaldf_Ca)
+m3a <- lm(concern_self ~ days_since_peak + conf_delta + socpolicyr, data = finaldf_Ca)
+m4a <- lm(concern_self ~ days_since_peak + intervention*conf_delta, data = finaldf_Ca)
+m5a <- lm(concern_self ~ days_since_peak*intervention + conf_delta, data = finaldf_Ca)
+m6a <- lm(concern_self ~ conf_delta + socpolicyr + log(gdp), data = finaldf_Ca)
+m7a <- lm(concern_self ~ conf_delta + days_since_peak + socpolicyr + log(gdp), data = finaldf_Ca)
+
+tab_model(m1a, m2a, m3a, m4a, m5a, m6a, m7a, p.style = \"stars\", p.threshold = c(0.10, 0.05, 0.01), show.ci = F, rm.terms = c(\"(Intercept)\"),  dv.labels = c(\"m1\", \"m2\",\"m3\",\"m4\", \"m5\", \"m6\",\"m7\"), pred.labels = c(\"New Cases, 1-week\", \"Outbreak Severity, log deaths (18-lead)\", \"Welfare State, spending*coverage\", \"GDP per capita, k at parity\", \"Intervention, days since 1st death\"))
+
+```"

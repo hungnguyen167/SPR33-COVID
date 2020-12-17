@@ -1,0 +1,27 @@
+"0","```r
+
+fig5 <- ggplot(cri_team_combine, aes(x=pro_immigrant_cat_factor, y=AME_Zt, fill = iv_type2))+
+  geom_flat_violin(aes(fill = iv_type2), position = position_nudge(x = .1, y = 0),adjust = 1.5, trim = F, alpha = .5, color = NA)+
+  geom_point(aes(x = pro_immigrant_cat_offset, y = AME_Zt, color = iv_type2), position = position_jitter(width = .15), size = 1, shape = 20)+
+  scale_x_discrete(limits = c(\"Low\",\"Mid\",\"High\")) +
+  ylab('Avg. Marginal Effect')+xlab('Avg. Pro-Immigration Affect by Researcher/Team')+
+  ylim(-0.12,0.12)+
+  coord_flip()+guides(fill = FALSE)+
+  scale_colour_brewer(palette = \"Dark2\")+
+  scale_fill_brewer(palette = \"Dark2\")+
+  ggtitle('Figure 5. Results Variability by Test Variable\n  and Pro-Immigration Affect, Team-Level Average') +
+  theme(
+    axis.text=element_text(size=10),
+    axis.title=element_text(size=12),
+    plot.title=element_text(size=12, hjust=-0.5),
+  )
+png(filename = \"results/Fig5_Rain_team.png\", height = 720, width = 800, res = 144)
+fig5
+dev.off()
+```"
+"1","null device 
+          1 
+"
+"0","```r
+knitr::include_graphics( \"results/Fig5_Rain_team.png\")
+```"

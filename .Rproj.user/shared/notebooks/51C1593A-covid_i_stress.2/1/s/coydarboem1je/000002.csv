@@ -1,0 +1,7 @@
+"0","```r
+
+
+tab_model(m3, m5, p.style = \"stars\", p.threshold = c(0.10, 0.05, 0.01), show.ci = F, rm.terms = c(\"(Intercept)\"), show.std = T, dv.labels = c(\"M1\", \"M2\",\"M3\",\"M4\", \"M5\"), pred.labels = c(\"Case Increase, past week\", \"Days Since Curve Inflection\", \"Welfare State, scale\", \"Government Intervention\", \"Intervention*Welfare State\"))
+
+
+```"

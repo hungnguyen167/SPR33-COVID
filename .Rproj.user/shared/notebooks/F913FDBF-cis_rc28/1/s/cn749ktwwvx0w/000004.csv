@@ -1,0 +1,29 @@
+"0","```r
+
+#   geom_smooth(method=lm, se=FALSE) +
+
+mx <- lm(m1r ~ gini_disp, data = df)
+summary(mx)
+```"
+"1","
+Call:
+lm(formula = m1r ~ gini_disp, data = df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.67979 -0.18840  0.03372  0.20558  0.71126 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.660335   0.170292  -3.878 0.000231 ***
+gini_disp    0.018893   0.004777   3.955 0.000177 ***
+---
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
+
+Residual standard error: 0.288 on 72 degrees of freedom
+Multiple R-squared:  0.1785,	Adjusted R-squared:  0.1671 
+F-statistic: 15.64 on 1 and 72 DF,  p-value: 0.0001773
+"
+"0","```r
+  
+```"

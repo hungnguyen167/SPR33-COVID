@@ -1,0 +1,8 @@
+"0","wdir <- function(x){"
+"0","  paste(getwd(),x, sep = ""/"")"
+"0","}"
+"0",""
+"0","# need pacman package installed to run this"
+"0","# install.packages(""pacman"")"
+"0","pacman::p_load(""dplyr"",""countrycode"",""car"",""ggplot2"",""jtools"",""sjPlot"",""sjmisc"",""sjlabelled"",""tidyverse"",""psych"",""lavaan"",""kableExtra"",""ggrepel"",""stringi"",""margins"",""readxl"",""semPlot"",""htmlTable"", ""countrycode"",""haven"",""semTable"",""ragg"")"
+"0",""

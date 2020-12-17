@@ -1,0 +1,7 @@
+"0","```r
+issp16dfa <- select(issp16dfa, cow, gov_intv, gov_ineq)
+
+```"
+"1","Error in select(issp16dfa, cow, gov_intv, gov_ineq) : 
+  object 'issp16dfa' not found
+"

@@ -1,0 +1,11 @@
+"0","```r
+cor <- select(df, concern_self, days_since_peak, conf_delta, gov_resp, intervention, gini_disp, socpolicy, gdp)
+f1 <- cor(cor, use = \"pairwise.complete.obs\")
+
+# corrplot::corrplot(f1)
+
+# The country question is an outlier
+cor1 <- kable(f1, digits = 2, col.names = c(\"Risk Perception\", \"Days Since Peak\", \"New Cases Past Week\",\"Severity of Gov Response\", \"Timing of Gov Response\", \"Gini, disposable\", \"Welfare State\", \"GDP, per capita\"))
+
+kable_styling(cor1)
+```"

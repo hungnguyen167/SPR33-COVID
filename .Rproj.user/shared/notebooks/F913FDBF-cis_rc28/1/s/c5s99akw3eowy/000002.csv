@@ -1,0 +1,9 @@
+"0","```r
+ggplot(df, aes(y=gov_resp, x=gov_intv)) +
+  geom_point() +
+  geom_text(aes(label=iso), vjust = 1.5) +
+  geom_smooth(method=lm, se=FALSE) +
+  xlab(\"General Public Preferences for Government Intervention\") +
+  ylab(\"Severity of Government Pandemic Measures\") +
+  theme_classic()
+```"

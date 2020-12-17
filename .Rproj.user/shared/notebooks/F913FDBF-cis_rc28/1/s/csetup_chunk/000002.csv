@@ -1,0 +1,16 @@
+"0","```r
+
+rm(list = ls(all = T))
+
+wd <- \"C:/data\" #set your working directory here
+
+wdir <- function(x){
+  paste(wd,x, sep = \"/\")
+}
+
+
+# need pacman package installed to run this
+# install.packages(\"pacman\")
+pacman::p_load(\"dplyr\",\"countrycode\",\"car\",\"ggplot2\",\"jtools\",\"sjPlot\",\"sjmisc\",\"sjlabelled\",\"tidyverse\",\"psych\",\"lavaan\",\"kableExtra\",\"ggrepel\",\"stringi\",\"margins\",\"readxl\",\"foreign\")
+
+```"

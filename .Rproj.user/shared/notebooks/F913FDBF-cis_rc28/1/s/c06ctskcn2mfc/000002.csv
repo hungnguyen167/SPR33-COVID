@@ -1,0 +1,9 @@
+"0","```r
+ggplot(df, aes(y=concern_self, x=gov_resp)) +
+  geom_point() +
+  geom_text(aes(label=iso), vjust = 1.5) +
+  geom_smooth(method=lm, se=FALSE) +
+  xlab(\"Severity of Government Pandemic Measures\") +
+  ylab(\"Risk Perceptions\") +
+  theme_classic()
+```"

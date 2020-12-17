@@ -1,0 +1,23 @@
+"0","```r
+
+# select measures as of end of March (start of the survey period)
+
+gov_resp <- subset(gov_resp, Date == \"24-Mar-20\")
+gov_resp$cow <- countrycode(gov_resp$Entity, \"country.name\", \"cown\")
+
+colnames(gov_resp) <- c(\"1\",\"2\",\"3\",\"gov_resp\",\"cow\")
+
+# impute Grenada, Malta and N Macedonia (using Wikipedia info)
+# Grenada, strong lockdown, very few cases. Score = 87
+# Malta, moderate measures. Score = 70
+# N Macedonia, very strong, near total lockdown. Score = 93
+
+gov_resp$gov_resp <- ifelse(gov_resp$cow == 55, 87, ifelse(gov_resp$cow == 338, 70, ifelse(gov_resp$cow == 343, 93, gov_resp$gov_resp)))
+
+
+# select countries
+gov_resp <- gov_resp[gov_resp$cow %in% countries, ]
+
+gov_resp <- select(gov_resp, cow, gov_resp)
+
+```"

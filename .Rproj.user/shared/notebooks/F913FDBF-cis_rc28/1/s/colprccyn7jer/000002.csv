@@ -1,0 +1,16 @@
+"0","```r
+mid <- 34
+# trim gini to get better color display
+df$gini_color <- ifelse(df$gini_disp<45, df$gini_disp, 45)
+
+ggplot(data=df, aes(x=conf_delta, y=concern_self, color = gini_color)) +
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE, color = \"gray50\", linetype = \"dashed\") +
+  geom_text_repel(aes(label = iso), size = 2.8) +
+  scale_color_gradient2(midpoint=mid, low=\"blue\", mid=\"gray55\", high=\"red\", space=\"Lab\") +
+  labs(x= \"New Case Rate, past week\", y = \"Coronavirus Concerns\", color = \"Income Inequality\n(Gini, post\ntax & transfer)\") +
+      theme(panel.background = element_rect(fill = \"white\", colour = \"grey50\"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.title = element_text(size = 10))
+```"

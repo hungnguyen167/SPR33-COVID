@@ -1,0 +1,23 @@
+"0","```r
+png(file = wdir(\"Fig4.png\"), width = 600)
+m5plot + labs(title = \"\", x = \"Welfare State Strength\", y = \"Coronavirus Concerns, Personal\") +
+  scale_color_manual(name=\"Government\nIntervention\",
+                       labels=c(\"WEAK \n30-days late\",\"STRONG \n5-days advance\"),
+                       values=c(\"red\",\"blue\")) +
+    theme(panel.background = element_blank(),
+          axis.line = element_line(color = \"black\"),
+          legend.spacing.x = unit(0.5, 'cm'),
+          legend.text = element_text(margin = margin(t = 5), size = 12),
+          legend.title = element_text(size = 14),
+          axis.title = element_text(size = 14))
+
+```"
+"1","Scale for 'colour' is already present. Adding another scale for 'colour', which
+will replace the existing scale.
+"
+"0","```r
+dev.off()
+```"
+"1","null device 
+          1 
+"

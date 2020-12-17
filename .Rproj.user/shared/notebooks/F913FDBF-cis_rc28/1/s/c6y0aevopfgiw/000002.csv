@@ -1,0 +1,9 @@
+"0","```r
+
+df <- left_join(finaldf_Ca, gov_resp, by = \"cow\")
+df <- left_join(df, gini_disp, by = \"cow\")
+df <- left_join(df, issp16dfa, by = \"cow\")
+df <- left_join(df, top_inc1, by = \"cow\")
+df <- left_join(df, top_inc2, by = \"cow\")
+
+```"

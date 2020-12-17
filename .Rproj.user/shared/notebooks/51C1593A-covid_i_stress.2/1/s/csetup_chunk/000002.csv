@@ -1,0 +1,18 @@
+"0","```r
+# need pacman package installed to run this
+
+```"
+"1","Warning messages:
+1: In readChar(file, size, TRUE) : truncating string with embedded nuls
+2: In readChar(file, size, TRUE) : truncating string with embedded nuls
+3: In readChar(file, size, TRUE) : truncating string with embedded nuls
+4: In readChar(file, size, TRUE) : truncating string with embedded nuls
+5: In readChar(file, size, TRUE) : truncating string with embedded nuls
+6: In readChar(file, size, TRUE) : truncating string with embedded nuls
+7: In readChar(file, size, TRUE) : truncating string with embedded nuls
+8: In readChar(file, size, TRUE) : truncating string with embedded nuls
+"
+"0","```r
+# install.packages(\"pacman\")
+pacman::p_load(\"dplyr\",\"countrycode\",\"car\",\"ggplot2\",\"jtools\",\"sjPlot\",\"sjmisc\",\"sjlabelled\",\"tidyverse\",\"psych\",\"lavaan\",\"kable\",\"kableExtra\",\"ggrepel\",\"stringi\",\"margins\")
+```"

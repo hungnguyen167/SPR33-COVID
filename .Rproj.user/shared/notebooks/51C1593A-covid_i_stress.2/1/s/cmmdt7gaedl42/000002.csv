@@ -1,0 +1,14 @@
+"0","```r
+mid <- 0.7
+
+ggplot(data=finaldf_C, aes(x=intervention, y=concern_society, color=socpolicy)) +
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE, color = \"gray50\", linetype = \"dashed\") +
+  geom_text_repel(aes(label = iso), size = 2.5) +
+  scale_color_gradient2(midpoint=mid, low=\"blue\", mid=\"gray55\", high=\"red\", space=\"Lab\") +
+  labs(x= \"Government Intervention, days before 1st death\", y = \"Personal Coronavirus Concerns\", color = \"Welfare State\nStrength\") +
+      theme(panel.background = element_rect(fill = \"white\", colour = \"grey50\"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.title = element_text(size = 9))
+```"

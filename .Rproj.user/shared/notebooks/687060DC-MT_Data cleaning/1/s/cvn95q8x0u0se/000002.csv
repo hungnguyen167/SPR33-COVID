@@ -1,0 +1,31 @@
+"0","```r
+```r
+
+# Environment Module
+
+env00 <- read_dta(paste(wd, \ZA3440.dta\,sep=\\))
+env10 <- read_dta(paste(wd, \ZA5500_v3-0-0.dta\,sep=\\))
+
+# CHES
+ches10 <- read.csv(paste(wd,\2010_CHES_dataset_means.csv\, sep = \\), na.strings = \\)
+ches14 <- read.csv(paste(wd,\2014_CHES_dataset_means.csv\, sep = \\), na.strings = \\)
+seat1 <- read.xlsx(paste(wd,\Percentage-of-seats-in-parliaments.xlsx\, sep = \\),na.strings = \\, sheet = 1)
+seat2 <- read.xlsx(paste(wd,\Percentage-of-seats-in-parliaments.xlsx\, sep = \\), na.strings = \\, sheet = 2)
+
+# Government spending 
+gspend <- read.csv(paste(wd,\gov_10a_exp_1_Data.csv\, sep = \\))
+
+# CO2 Emission
+
+co2 <- read.table(file = paste(wd,\t2020_rd300.tsv\, sep=\\), sep = '\t', header = TRUE) 
+
+# Environment tax
+
+gtax <- read.csv(paste(wd,\env_ac_tax_1_Data.csv\, sep = \\))
+
+# GDP per Capita
+
+gdp <- read.csv(paste(wd,\nama_10_pc_1_Data.csv\, sep = \\))
+
+```
+```"

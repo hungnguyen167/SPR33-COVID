@@ -1,0 +1,16 @@
+"0","betrack <- betrack %>%"
+"0","  mutate("
+"0","    cow = countrycode(iso2c, origin = ""iso2c"", destination = ""cown""),"
+"0","    stay = scale(beh_stayhome),"
+"0","    gather = scale(beh_socgathering),"
+"0","    distance = scale(beh_distance),"
+"0","    tsymp = scale(beh_tellsymp),"
+"0","    hwash = scale(beh_handwash)"
+"0","  ) %>%"
+"0","  select(cow, date, stay, gather, distance, tsymp, hwash)"
+"2","Problem with `mutate()` input `cow`.
+[34mi[39m Some values were not matched unambiguously: HK, PS, RS
+
+[34mi[39m Input `cow` is `countrycode(iso2c, origin = ""iso2c"", destination = ""cown"")`."
+"2","Some values were not matched unambiguously: HK, PS, RS
+"

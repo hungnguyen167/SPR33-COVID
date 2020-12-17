@@ -1,0 +1,21 @@
+"0","```r
+
+# adjust risk for severity of outbreak
+m1 <- lm(concern_self ~ days_since_peak + conf_delta + gov_resp, data = df)
+
+# predicted values
+df$m1p <- predict.lm(m1, df)
+
+# residuals
+df$m1r <- df$concern_self - df$m1p 
+
+# plot fitted v observed
+ggplot(df, aes(y=m1p, x=concern_self)) +
+  geom_point() +
+  geom_text_repel(aes(label=iso), vjust = 1.5) +
+  geom_abline(slope=1) +
+
+  xlab(\"Observed Risk Perceptions\") +
+  ylab(\"Predicted Risk Perceptions\") +
+  theme_classic()
+```"

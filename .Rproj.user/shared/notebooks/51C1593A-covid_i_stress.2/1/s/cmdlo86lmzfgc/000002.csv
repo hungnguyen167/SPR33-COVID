@@ -1,0 +1,4 @@
+"0","```r
+load(file = wdir(\"COVIDiSTRESS/cis2.Rdata\"))
+
+```"

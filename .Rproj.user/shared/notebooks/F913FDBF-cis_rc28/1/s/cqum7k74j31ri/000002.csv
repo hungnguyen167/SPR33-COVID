@@ -1,0 +1,9 @@
+"0","```r
+ggplot(df, aes(y=gov_resp, x=gov_ineq)) +
+  geom_point() +
+  geom_text(aes(label=iso), vjust = 1.5) +
+  geom_smooth(method=lm, se=FALSE) +
+  xlab(\"Public Preferences for Government Redistribution\") +
+  ylab(\"Severity of Government Pandemic Measures\") +
+  theme_classic()
+```"

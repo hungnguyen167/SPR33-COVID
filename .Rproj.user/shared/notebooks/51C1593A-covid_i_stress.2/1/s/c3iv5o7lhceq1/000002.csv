@@ -1,0 +1,13 @@
+"0","```r
+
+m11a <- lm(concern_society ~ conf_delta, data = finaldf_Ca)
+m12a <- lm(concern_society ~ days_since_peak , data = finaldf_Ca)
+m13a <- lm(concern_society ~ socpolicy, data = finaldf_Ca)
+m14a <- lm(concern_society ~ gdp , data = finaldf_Ca)
+m15a <- lm(concern_society ~ intervention, data = finaldf_Ca)
+m16a <- lm(concern_society ~ conf_delta + socpolicy + gdp, data = finaldf_Ca)
+m17a <- lm(concern_society ~ conf_delta + days_since_peak + socpolicy + gdp + intervention, data = finaldf_Ca)
+
+tab_model(m11a, m12a, m13a, m14a, m15a, m16a, m17a, p.style = \"stars\", p.threshold = c(0.10, 0.05, 0.01), show.ci = F, rm.terms = c(\"(Intercept)\"),  dv.labels = c(\"m1\", \"m2\",\"m3\",\"m4\", \"m5\", \"m6\",\"m7\"),pred.labels = c(\"New Cases, 1-week\", \"Outbreak Severity, log deaths (18-lead)\", \"Welfare State, spending*coverage\", \"GDP per capita, k at parity\", \"Intervention, days since 1st death\"))
+          # file = wdir(\"tabs.html\"))
+```"

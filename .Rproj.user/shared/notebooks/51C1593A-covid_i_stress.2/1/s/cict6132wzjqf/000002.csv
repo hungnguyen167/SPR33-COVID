@@ -1,0 +1,9 @@
+"0","```r
+
+ggplot(data=finaldf_C, aes(x=concern_society , y=concern_self)) +
+  geom_point() +
+  geom_text_repel(aes(label = iso)) +
+  geom_smooth(method=lm, se=FALSE) +
+  labs(x= \"Self-concerns\", y = \"Societal-concerns\")
+
+```"

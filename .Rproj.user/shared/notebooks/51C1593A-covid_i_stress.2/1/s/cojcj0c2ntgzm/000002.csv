@@ -1,0 +1,10 @@
+"0","```r
+
+m11 <- lm(concern_society ~ days_since_peak + conf_delta, data = finaldf_C)
+m12 <- lm(concern_society ~ days_since_peak + conf_delta + gdp + socpolicy, data = finaldf_C)
+m13 <- lm(concern_society ~ days_since_peak + conf_delta + socpolicy, data = finaldf_C)
+m14 <- lm(concern_society ~ days_since_peak + conf_delta + intervention*gdp, data = finaldf_C)
+m15 <- lm(concern_society ~ days_since_peak + conf_delta + intervention*socpolicy, data = finaldf_C)
+
+tab_model(m11, m12, m13, m14, m15, p.style = \"stars\", p.threshold = c(0.10, 0.05, 0.01), show.ci = F, rm.terms = c(\"(Intercept)\"),  dv.labels = c(\"M1\", \"M2\",\"M3\",\"M4\", \"M5\"), pred.labels = c(\"Days Since Curve Inflection\", \"New Cases\",  \"GDP\", \"Welfare State Strength\", \"Government Intervention\", \"Intervention*GDP\", \"Intervention*Welfare State\"))
+```"

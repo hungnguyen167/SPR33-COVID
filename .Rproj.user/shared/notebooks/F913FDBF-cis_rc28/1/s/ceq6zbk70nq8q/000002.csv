@@ -1,0 +1,10 @@
+"0","```r
+
+
+ggplot(df, aes(y=m1r, x=socpolicy)) +
+  geom_smooth(method=lm, se=FALSE) +
+  geom_label_repel(aes(label=iso), size = 2.5) +
+  xlab(\"Welfare State, spending and coverage\") +
+  ylab(\"Risk Perceptions, M1 residuals\") +
+  theme_classic()
+```"

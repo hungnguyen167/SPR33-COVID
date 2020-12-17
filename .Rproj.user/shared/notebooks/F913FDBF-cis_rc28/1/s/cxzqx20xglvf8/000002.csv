@@ -1,0 +1,10 @@
+"0","```r
+
+
+ggplot(df, aes(y=m1r, x=gini_disp)) +
+  geom_smooth(method=lm, se=FALSE) +
+  geom_text_repel(aes(label=iso), size = 3) +
+  xlab(\"Income Inequality, post-tax and transfer gini\") +
+  ylab(\"Risk Perceptions, M1 residuals\") +
+  theme_classic()
+```"

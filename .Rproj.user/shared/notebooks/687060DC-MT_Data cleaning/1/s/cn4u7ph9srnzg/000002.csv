@@ -1,0 +1,13 @@
+"0","```r
+rm(list = ls())  # Clean the global environment
+
+# install.packages(\"pacman\")
+
+library(pacman)
+
+pacman::p_load(\"tidyverse\",\"haven\", \"car\",\"countrycode\", \"openxlsx\", \"lavaan\", \"knitr\",\"semTools\", \"ragg\", \"sjmisc\", \"sjPlot\", \"gt\")  # Load libraries
+
+
+wd <- \"C:/Github/\"  # Working directory
+options(encoding = \"UTF-8\")
+```"
