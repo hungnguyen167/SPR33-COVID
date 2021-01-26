@@ -5,9 +5,6 @@ output:
     df_print: paged
 ---
 
-This is a follow up study of 
-
-Breznau, Nate. 2020. “The Welfare State and Risk Perceptions: The Novel Coronavirus Pandemic and Public Concern in 70 Countries.” *European Societies*.
 
 The following files are necessary to run this code
 **ACLED COVID-19 Disorder Tracker**
@@ -536,7 +533,6 @@ tab1[,c(3:4)] <- round(tab1[,c(3:4)],2)
 
 htmlTable(tab1,rnames = FALSE)
 
-## Correlation table 
 
 ```
 
@@ -693,17 +689,17 @@ fit <- lm(formula, data=val)
 return(summary(fit)$coefficients)
 } 
 
-m51 <- boot(data = df, statistic = m_coef, R = 1000, formula = behave ~ gap1a)
+m51 <- boot::boot(data = df, statistic = m_coef, R = 1000, formula = behave ~ gap1a)
  
-m52 <- boot(data = df, statistic = m_coef, R = 1000, formula = behave  ~  gap1a + chi2) 
+m52 <- boot::boot(data = df, statistic = m_coef, R = 1000, formula = behave  ~  gap1a + chi2) 
 
-m53 <-  boot(data = df, statistic = m_coef, R = 1000, formula = behave  ~ gap1a + chi2 + dpm2)
+m53 <-  boot::boot(data = df, statistic = m_coef, R = 1000, formula = behave  ~ gap1a + chi2 + dpm2)
 
-m54 <-  boot(data = df, statistic = m_coef, R = 1000, formula =behave  ~ gap1a + chi2 + dpm2 + gini_disp)
+m54 <-  boot::boot(data = df, statistic = m_coef, R = 1000, formula =behave  ~ gap1a + chi2 + dpm2 + gini_disp)
 
-m55 <-  boot(data = df, statistic = m_coef, R = 1000, formula = behave ~ gap1a + chi2 + dpm2 + gini_disp + soc_spend)
+m55 <-  boot::boot(data = df, statistic = m_coef, R = 1000, formula = behave ~ gap1a + chi2 + dpm2 + gini_disp + soc_spend)
 
-m56 <-  boot(data = df, statistic = m_coef, R = 1000, formula = behave ~ gap1a + chi2 + dpm2 + gini_disp + soc_spend  + gdp)
+m56 <-  boot::boot(data = df, statistic = m_coef, R = 1000, formula = behave ~ gap1a + chi2 + dpm2 + gini_disp + soc_spend  + gdp)
 
 
 
@@ -901,18 +897,18 @@ sc1 <- ggscatter(df, x = "gov_author", y = "chi1", conf.int =  TRUE, size = 5) +
     geom_smooth(method = lm, se = TRUE, fullrange = FALSE, aes(group = 1), color = "blue") +
     geom_text_repel(aes(label = iso), size = 7) +
     scale_color_discrete(name = "Country (ISO)") +
-    xlab(label = "Institutionalized Public Preferences") +
+    xlab(label = "Public Preferences") +
     ylab(label = "Government Intervention in the Outbreak Stage") +
     theme(axis.title = element_text(size = 24,face = "bold"),axis.text = element_text(size = 12))
 
 
-sc2 <- ggscatter(df, x = "chi1_pa", y = "chi1", conf.int =  TRUE, size = 5) +
+sc2 <- ggscatter(df, x = "gap1a", y = "chi2", conf.int =  TRUE, size = 5) +
     stat_cor(method = "pearson", size = 10, label.x = 0.08, label.y = -2) +
     geom_smooth(method = lm, se = TRUE, fullrange = FALSE, aes(group = 1), color = "blue") +
     geom_text_repel(aes(label = iso), size = 7) +
     scale_color_discrete(name = "Country (ISO)") +
-    xlab(label = "Government Intervention 'Expected' by the Public") +
-    ylab(label = "Government Intervention in the Outbreak Stage") +
+    xlab(label = "Discrepancy Score") +
+    ylab(label = "Government Intervention in the Reaction Stage") +
     theme(axis.title = element_text(size = 24,face = "bold"),axis.text = element_text(size = 12))
 
 sc3 <- ggscatter(df, x = "gap1a", y = "behave", conf.int =  TRUE, size = 5) +
@@ -920,8 +916,8 @@ sc3 <- ggscatter(df, x = "gap1a", y = "behave", conf.int =  TRUE, size = 5) +
     geom_smooth(method = lm, se = TRUE, fullrange = FALSE, aes(group = 1), color = "blue") +
     geom_text_repel(aes(label = iso), size = 7) +
     scale_color_discrete(name = "Country (ISO)") +
-    xlab(label = "Discrepancy Score in the Outbreak Stage") +
-    ylab(label = "Public Behaviors in the Reaction Stage") +
+    xlab(label = "Discrepancy Score") +
+    ylab(label = "Public Behaviors") +
     theme(axis.title = element_text(size = 24,face = "bold"),axis.text = element_text(size = 12))
 
 library(gridExtra)
@@ -929,5 +925,7 @@ agg_png(wdir("results/scatplots.png"), width = 2000, height =  1500)
 layout_matrix <- matrix(c(1, 1, 2, 2, 4, 3, 3, 4), nrow = 2, byrow = TRUE)
 grid.arrange(sc1, sc2, sc3, nrow = 2, layout_matrix = layout_matrix)
 invisible(dev.off())
+
+knitr::include_graphics(wdir("results/scatplots.png"))
 ```
 
